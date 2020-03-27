@@ -15,7 +15,7 @@ class Aws extends Component
     public $version = 'latest';
 
     /**
-     * @param  array  $config
+     * @param array $config
      * @return PinpointClient
      */
     public function pinpoint($config = [])
@@ -23,6 +23,10 @@ class Aws extends Component
         return new PinpointClient(ArrayHelper::merge($this->getDefaultConfig(), $config));
     }
 
+    /**
+     * @param array $config
+     * @return SnsClient
+     */
     public function sns($config = [])
     {
         return new SnsClient(ArrayHelper::merge($this->getDefaultConfig(), $config));
